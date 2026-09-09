@@ -2782,7 +2782,7 @@ class GeminiAnalyzer:
             base_url = str(params.get("api_base") or "").strip()
             if is_masked_secret_placeholder(api_key):
                 raise RuntimeError("Hermes API key is a masked placeholder and cannot be used for generation")
-            timeout = float(call_kwargs.get("timeout") or 30.0)
+            timeout = float(call_kwargs.get("timeout") or 300.0)
             hermes_kwargs = dict(call_kwargs)
             hermes_kwargs["model"] = str(params.get("model") or model)
             hermes_kwargs["stream"] = False
